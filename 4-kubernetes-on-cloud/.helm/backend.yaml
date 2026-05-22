@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: starciacademy/kubernetes-on-cloud-backend:latest
+        image: starciacademy/system-design-kubernetes-on-cloud-backend:latest
         ports:
         - containerPort: 3000
         env:

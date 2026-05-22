@@ -25,7 +25,7 @@ services:
   # (EN: Monolithic app containing all modules (Search, Payment).)
   monolith-service:
     profiles: ["monolith"]
-    image: starciacademy/monolith-vs-microservices-monolith-service:latest
+    image: starciacademy/system-design-monolith-vs-microservices-monolith-service:latest
     ports:
       - "8080-8085:3000"
     networks:
@@ -36,7 +36,7 @@ services:
     image: nginx:alpine
     container_name: 0-monolith-vs-microservices-gateway
     volumes:
-      - ../gateway/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../.gateway/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - "8080:80"
     depends_on:
@@ -46,13 +46,13 @@ services:
       - 0-monolith-vs-microservices-network
   search-service:
     profiles: ["microservices"]
-    image: starciacademy/monolith-vs-microservices-search-service:latest
+    image: starciacademy/system-design-monolith-vs-microservices-search-service:latest
     networks:
       - 0-monolith-vs-microservices-network
     container_name: 0-monolith-vs-microservices-search-service
   payment-service:
     profiles: ["microservices"]
-    image: starciacademy/monolith-vs-microservices-payment-service:latest
+    image: starciacademy/system-design-monolith-vs-microservices-payment-service:latest
     networks:
       - 0-monolith-vs-microservices-network
     container_name: 0-monolith-vs-microservices-payment-service

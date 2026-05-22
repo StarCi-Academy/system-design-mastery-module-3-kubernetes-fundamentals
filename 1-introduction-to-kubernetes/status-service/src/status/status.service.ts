@@ -6,9 +6,6 @@ import {
     Injectable,
     Logger,
 } from "@nestjs/common"
-import {
-    Logger,
-} from "@nestjs/common"
 import * as os from "os"
 
 /**

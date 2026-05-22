@@ -1,20 +1,12 @@
-/**
- * HTTP/Kafka controller — routes delegate to service.
- * (EN: Controller — routes delegate to service.)
- */
-}
+import {
+    Controller,
+    Get,
+} from "@nestjs/common"
+import * as os from "os"
 
-    /**
-     * GET /api/search — Trả về kết quả tìm kiếm giả lập.
-     * (EN: GET /api/search — Returns mock search results.)
-     */
+@Controller()
+export class AppController {
     @Get()
-    /**
- * Logic — Đọc/truy vấn dữ liệu qua `getSearch`.
- * Code — Truy vấn in-memory / DB / cache và map response DTO.
- * (EN Logic: Read/query via `getSearch`.)
- * (EN Code: Query in-memory / DB / cache and map response.)
- */
     getSearch() {
         return {
             service: "Search Service",
@@ -23,3 +15,4 @@
             results: ["Product 1", "Product 2", "Product 3"],
         }
     }
+}

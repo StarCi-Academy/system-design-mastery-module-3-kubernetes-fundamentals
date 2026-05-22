@@ -1,20 +1,12 @@
-/**
- * HTTP/Kafka controller — routes delegate to service.
- * (EN: Controller — routes delegate to service.)
- */
-}
+import {
+    Controller,
+    Get,
+} from "@nestjs/common"
+import * as os from "os"
 
-    /**
-     * GET /api/payment — Xử lý thanh toán giả lập.
-     * (EN: GET /api/payment — Handles mock payment processing.)
-     */
+@Controller()
+export class AppController {
     @Get()
-    /**
- * Logic — Đọc/truy vấn dữ liệu qua `getPayment`.
- * Code — Truy vấn in-memory / DB / cache và map response DTO.
- * (EN Logic: Read/query via `getPayment`.)
- * (EN Code: Query in-memory / DB / cache and map response.)
- */
     getPayment() {
         return {
             service: "Payment Service",
@@ -23,3 +15,4 @@
             status: "Ready to process payments",
         }
     }
+}

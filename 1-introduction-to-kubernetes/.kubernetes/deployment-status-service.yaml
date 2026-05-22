@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: status-service
-          image: starciacademy/introduction-to-kubernetes-status-service:latest
+          image: starciacademy/system-design-introduction-to-kubernetes-status-service:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
