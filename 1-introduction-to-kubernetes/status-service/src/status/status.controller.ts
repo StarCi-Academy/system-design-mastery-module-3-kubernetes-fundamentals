@@ -4,7 +4,7 @@ import {
 } from "@nestjs/common"
 import {
     StatusService,
-} from "."
+} from "./status.service"
 
 @Controller()
 export class StatusController {

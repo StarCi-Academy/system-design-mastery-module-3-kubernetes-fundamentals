@@ -152,7 +152,7 @@ export class AppService implements OnModuleInit {
         this.logger.log("Cache miss. Fetching from MySQL...")
         const [rows] = await this.mysqlConn.execute("SELECT * FROM items")
         const data: ReadonlyArray<ItemRow> = Array.isArray(rows)
-            ? rows.filter((row): row is ItemRow =>
+            ? (rows as unknown[]).filter((row): row is ItemRow =>
                 typeof row === "object" &&
                 row !== null &&
                 !Array.isArray(row) &&
